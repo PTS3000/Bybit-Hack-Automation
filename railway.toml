@@ -4,5 +4,4 @@ buildCommand = "pip install -r requirements.txt"
 
 [deploy]
 startCommand = "python run_automation.py"
-restartPolicyType = "cron"
-restartPolicyRate = "0 1 * * *"  # Runs at 1 AM UTC daily 
+cronSchedule = "0 1 * * *"  # Runs at 1 AM UTC daily 
