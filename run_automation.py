@@ -21,6 +21,7 @@ logging.basicConfig(
 
 def main():
     try:
+        logging.info("Starting scheduled automation run...")
         # Query Snowflake and get addresses
         dune_file = query_lazarus_group()
         
@@ -29,9 +30,10 @@ def main():
         upload_to_dune(dune_file)
         
         logging.info("Process completed successfully")
+        sys.exit(0)  # Exit successfully
     except Exception as e:
         logging.error(f"Process failed: {str(e)}")
-        sys.exit(1)
+        sys.exit(1)  # Exit with error
 
 if __name__ == "__main__":
     main() 
